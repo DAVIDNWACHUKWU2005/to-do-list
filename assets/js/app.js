@@ -82,7 +82,7 @@ function listTasks() {
             <p>Priority: ${task.priority}</p>
         `;
 
-        // Delete task on hover and click
+
         listen("click", taskDiv, () => deleteTask(index));
 
         taskDiv.style.cursor = "pointer";
