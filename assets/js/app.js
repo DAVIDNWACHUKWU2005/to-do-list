@@ -82,10 +82,10 @@ function listTasks() {
             <p>Priority: ${task.priority}</p>
         `;
 
-       
+        // Delete task on hover and click
         listen("click", taskDiv, () => deleteTask(index));
 
-      
+        taskDiv.style.cursor = "pointer";
 
         taskList.appendChild(taskDiv);
     });
@@ -113,10 +113,11 @@ function setAlarm(task) {
             notification.textContent = `Task "${task.taskName}" is due `;
 
             document.body.appendChild(notification);
+
     
             setTimeout(() => notification.remove(), 5000);
         }, timeUntilTask);
     }
 }
 
-
+listen("click", addTaskButton, addTask);
