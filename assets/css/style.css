@@ -1,0 +1,183 @@
+@charset "utf-8";
+
+:root {
+    --app-font-light: #efeef5;
+    --app-background-body: #021526;
+    --app-font-color: #0BDA51;
+    --app-large-font-color: #EEEEEE;
+    --app-button-background-color: #0BDA51;
+    --app-text-body-color: rgb(255 255 255 / 5%);
+    --app-placeholder-background: rgb(255 255 255 / 5%);
+    --app-task-input: #777;
+    --app-border-color: #FF5733;
+}
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+    background-color: var(--app-background-body);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/*----------------------------------*/
+/* Utilities                        */
+/*----------------------------------*/
+
+.flex {
+    display: flex;
+    place-items: center;
+}
+
+.flex-between {
+    justify-content: space-between;
+}
+
+.flex-end {
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-30 {
+    gap: 30px;
+}
+
+.grid-center {
+    display: grid;
+    place-items: center;
+}
+
+.grid {
+    display: grid;
+}
+
+.flex-start {
+    justify-content: flex-end;
+    display: inline-flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/*----------------------------------*/
+/* Main                             */
+/*----------------------------------*/
+
+.task-input, .date-input, .time-input, .priority-input {
+    height: 46px;
+    padding: 0 5px;
+    width: 100px;
+    color: var(--app-font-light);
+    background: var(--app-placeholder-background);
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.priority-input{
+    background-color: #021526;
+}
+
+.priority-input {
+    width: auto;
+    padding: 0 10px;
+}
+
+input[type=button] {
+    height: 46px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    border-radius: 5px;
+    background-color: var(--app-button-background-color);
+    padding: 0 25px;
+    cursor: pointer;
+}
+
+h1 {
+    margin-top: 50px;
+    color: var(--app-large-font-color);
+    margin-bottom: 20px;
+}
+
+.task-box {
+    background-color: var(--app-text-body-color);
+    border-radius: 5px;
+    width: 350px;
+    height: 150px;
+    font-size: 20px;
+    color: var(--app-font-light);
+    padding: 20px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+}
+
+
+
+.task-box:hover {
+    border-color: var(--app-border-color);
+}
+
+.todo-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+
+
+.tasks-num {
+    font-size: 20px;
+    color: var(--app-font-light);
+}
+
+.error-messages {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 15px 20px;
+    background-color: #ff5733;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.task-error{
+    color:red;
+    font-size: 30px;
+}
